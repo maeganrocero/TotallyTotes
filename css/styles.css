@@ -69,7 +69,7 @@ main {
 }
 
 main p {
-	font-size: 1.25em;
+	font-size: 1.3em;
 }
 
 .action {
@@ -149,7 +149,7 @@ form #submit {
 /* Style rules for footer content */
 footer {
 	text-align: center;
-	font-size: 1.25em;
+	font-size: 1.75em;
 	clear: left;
 }
 
