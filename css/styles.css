@@ -278,13 +278,3 @@ footer a {
 		color: #000;
 	}
 }
-
-/*Add to cart button rules same as submit button rules*/
-input {
-	margin-bottom: 2%;
-	display: block;
-	padding: 3%;
-	background-color: #7575cf;
-	font-size: 1em;
-	
-}
