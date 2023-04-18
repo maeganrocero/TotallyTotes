@@ -28,6 +28,21 @@
 	</section>
 </header>
 <body>
+	<script>
+		let h1 = document.querySelector('h1');
+		let date = new Date();
+		let hoursNow = date.getHours();
+		
+		if (hoursNow > 17) {
+			h1.textContent = "Good Evening! Welcome to TotallyTotes";
+		}else if (hoursNow > 11) {
+			h1.textContent = "Good Afternoon! Welcome to TotallyTotes";
+		}else if (hoursNow > 5) {
+			h1.textContent = "Good Morning! Welcome to TotallyTotes";
+		}else{
+			h1.textContent = "Welcome!";
+		}
+	</script>
 
 	<nav>
 	
