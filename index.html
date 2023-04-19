@@ -17,25 +17,10 @@
 </head>
 
 <header>
-	<h1><span class="tab-desk"></span> TotallyTotes <span class="tab-desk"></span></h1>
+	<h1><span class="tab-desk"></span> Welcome to TotallyTotes <span class="tab-desk"></span></h1>
 </header>
 <body>
-	<script>
-		let h1 = document.querySelector('h1');
-		let date = new Date();
-		let hoursNow = date.getHours();
-		
-		if (hoursNow > 18) {
-			h1.textContent = "Good Evening! Welcome to TotallyTotes";
-		}else if (hoursNow > 12) {
-			h1.textContent = "Good Afternoon! Welcome to TotallyTotes";
-		}else if (hoursNow > 0) {
-			h1.textContent = "Good Morning! Welcome to TotallyTotes";
-		}else{
-			h1.textContent = "Welcome!";
-		}
-	</script>
-
+	
 	<nav>
 	
 		<ul>
@@ -44,6 +29,14 @@
 			<li><a href="contact.html"> &#10048; Contact &#10048;</a></li>
 		</ul>
 	</nav>
+	
+	<section id="info">
+		
+		<h1>Limited time offer!</h1>
+		<h2>Buy 2 iPhone cases designs of your choice and get it 10% OFF!</h2>
+		<p id="offerEnds"></p>
+		
+	</section>
 
 	<!-- Hero image -->
 		<section id="hero">
@@ -146,6 +139,47 @@
 	<footer>
 		<p><a href="mailto:megroc@outlook.com">megroc@outlook.com</a></p>
 	</footer>
+	
+	<script>
+		let greetingElement = document.getElementById("greeting");
+		let date = new Date();
+		let hoursNow = date.getHours();
+		
+		if (hoursNow > 18) {
+			greetingElement.innerHTML = "Good Evening!";
+		}else if (hoursNow > 12) {
+			greetingElement.innerHTML = "Good Afternoon!";
+		}else if (hoursNow > 0) {
+			greetingElement.innerHTML = "Good Morning!";
+		}else{
+			greetingElement.innerHTML = "Welcome!";
+		}
+		
+		var expiryMsg;
+		var today;
+		var elEnds;
+		
+		function offerExpires(today) {
+			var weekFromToday, day, date, month, year, dayNames, monthNames;
+			weekFromToday = new Date(today.getTime() + 7 * 24 * 60 * 60 * 1000);
+			dayNames = ['Sunday', 'Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday'];
+			monthNames = ['January', 'February', 'March', 'April', 'May', 'June', 'July', 'August', 'September', 'October', 'November', 'December'];
+			day = dayNames[weekFromToday.getDay()];
+			date = weekFromToday.getDate();
+			month = monthNames [weekFromToday.getMonth()];
+			year = weekFromToday.getFullYear();
+		
+			expiryMsg = 'Offer expires next ';
+			expiryMsg += day + ' <br />(' + month + ' ' + date + ', ' + year + ')';
+			return expiryMsg;
+		}
+		
+		today = new Date();
+		elEnds = document.getElementById('offerEnds');
+		elEnds.innerHTML = offerExpires(today);
+		
+		offerExpires(today); 
+	</script>
 	
 </body>
 </html>
