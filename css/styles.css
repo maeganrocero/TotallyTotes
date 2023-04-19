@@ -278,3 +278,20 @@ footer a {
 		color: #000;
 	}
 }
+
+/* Styles for greeting*/
+h1 {
+	font-size: 50px;
+	letter-spacing: 2px;
+	text-transform: capitalized;
+	text-align: center;
+}
+
+h2 {
+	text-align: center;
+}
+
+/*Styles for offer expiration*/
+#offerEnds {
+	text-align: center;
+}
