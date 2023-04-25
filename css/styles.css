@@ -295,3 +295,8 @@ h2 {
 #offerEnds {
 	text-align: center;
 }
+
+/*Styles for products in contact webpage*/
+#products {
+	font-size: 1em;
+}
