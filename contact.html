@@ -73,21 +73,8 @@
 				<legend>Order</legend>
 				<p>Select product:</p>
 				
-				<label for="lavlove"><input type="checkbox" name="interest" id="lavlove" value="Lavender Love">Lavender Love</label>
+				<p id="products"></p>
 				
-				<label for="neutral"><input type="checkbox" name="interest" id="neutral" value="Neutral Mutual Love">Neutral Mutual Love</label>
-				
-				<label for="bundle"><input type="checkbox" name="interest" id="bundle" value="Tote bag bundle">Tote bag bundle</label>
-				
-				<label for="oceanc"><input type="checkbox" name="interest" id="oceanc" value="Ocean Breeze">Ocean Breeze</label>
-				
-				<label for="lavc"><input type="checkbox" name="interest" id="lavc" value="Lavender Bloom">Lavender Bloom</label>
-				
-				<label for="plumeriac"><input type="checkbox" name="interest" id="plumeriac" value="Plumeria Bloom">Plumeria Bloom</label>
-				
-				<label for="sagec"><input type="checkbox" name="interest" id="sagec" value="Sage Bloom">Sage Bloom</label>
-				
-				<label for="neutralc"><input type="checkbox" name="interest" id="neutralc" value="Neutral Bloom">Neutral Bloom</label>
 			</fieldset>
 			
 			<fieldset>
@@ -117,3 +104,18 @@
 <footer>
 	<p><a href="mailto:megroc@outlook.com">megroc@outlook.com</a></p>
 </footer>
+	
+<script>
+	const products = ["Lavender Love", "Neutral Mutual Love", "Tote bag bundle", "Ocean Breeze", "Lavender Bloom", "Plumeria Bloom", "Sage Bloom", "Neutral Bloom"];
+	
+	let productEl = "";
+	for (let i = 0; i < products.length; i++) {
+		var openLabelTag = "<label " + "for=\"" + products[i] + "\" " + ">";
+		var openInputTag = "<input " + "id=\"" + products[i] + "\" " + "type=\"checkbox\"" + ">";
+		productEl += openLabelTag + openInputTag + products[i] + "</input>" + "</label>" ;
+	}
+
+	document.getElementById("products").innerHTML = productEl;
+</script>
+	
+</html>
