@@ -300,3 +300,16 @@ h2 {
 #products {
 	font-size: 1em;
 }
+
+/*Styles for sign in*/
+input {
+	
+	padding: .5em;
+	text-align: left-align;
+	font-size: 0.8em;
+}
+
+#formtwo {
+	margin-left: 1%;
+	
+}
