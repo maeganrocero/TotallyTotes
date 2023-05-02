@@ -22,6 +22,12 @@
 </header>
 <body>
 	
+<div id="formtwo">
+	<h3>Sign in:</h3>
+	<input type="text" placeholder="Username or email address">
+	<input type="password" placeholder="Password">
+	
+<h2>Get 10% off your first order!</h2>
 	<nav>
 	
 		<ul>
@@ -180,6 +186,26 @@
 		elEnds.innerHTML = offerExpires(today);
 		
 		offerExpires(today); 
+		
+		/*Script for sign in form*/
+		let formtwo = document.getElementById("formtwo");
+		
+		formtwo.addEventListener(
+		"focus", 
+		function(event){
+		
+			event.target.style.background = "#B0CFDE";
+		},
+		true
+		);
+		
+		formtwo.addEventListener("blur", function(event){
+		
+			event.target.style.background = "";
+		},
+		true
+		);
+		
 	</script>
 	
 </body>
