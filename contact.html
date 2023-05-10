@@ -76,6 +76,39 @@
 				
 				<p id="products"></p>
 				
+				<p>Select a mobile device:</p>
+				
+				<div class="select-box">
+					<div class="select-option">
+						<input type="text" placeholder="Select a device" id="soValue" readonly name="">
+					</div>
+					<div class="select-box-content">
+						<div class="search-box">
+							<input type="text" id="optionSearch" placeholder="Search" name="">
+						</div>
+						<ul class="options">
+							<li>iPhone X</li>
+							<li>iPhone XR</li>
+							<li>iPhone XS</li>
+							<li>iPhone XS Max</li>
+							<li>iPhone 11</li>
+							<li>iPhone 11 Pro</li>
+							<li>iPhone 12 mini</li>
+							<li>iPhone 12</li>
+							<li>iPhone 12 Pro</li>
+							<li>iPhone 12 Pro Max</li>
+							<li>iPhone 13 mini</li>
+							<li>iPhone 13</li>
+							<li>iphone 13 Pro</li>
+							<li>iPhone 13 Pro Max</li>
+							<li>iPhone 14</li>
+							
+						</ul>
+
+					
+					</div>
+				
+				</div>
 			</fieldset>
 			
 			<fieldset>
@@ -123,6 +156,40 @@
 	var itemContent = firstItem.innerHTML;
 	firstItem.innerHTML = '<a href=\"https://totallytotes3.wordpress.com\">' + itemContent + '</a>';
 	
+	/*Script for dropdown mobile device menu*/
+	const selectBox = document.querySelector('.select-box');
+	const selectOption = document.querySelector('.select-option');
+	const soValue = document.querySelector('#soValue');
+	const optionSearch = document.querySelector('#optionSearch');
+	const options = document.querySelector('.options');
+	const optionsList = document.querySelectorAll('.options li');
+	
+	selectOption.addEventListener('click',function(){
+		selectBox.classList.toggle('active');
+	});
+	
+	optionsList.forEach(function(optionsListSingle){
+		optionsListSingle.addEventListener('click', function(){
+			text = this.textContent;
+			soValue.value = text;
+			selectBox.classList.remove('active');
+		})
+	});
+	
+	optionSearch.addEventListener('keyup', function(){
+		var filter, li, i, textValue;
+		filter = optionSearch.value.toUpperCase();
+		li = options.getElementsByTagName('li');
+		for(i = 0; i < li.length; i++){
+			liCount = li[i];
+			textValue = liCount.textContent || liCount.innnerText;
+			if(textValue.toUpperCase().indexOf(filter) > -1){
+				li[i].style.display = '';
+			}else{
+				li[i].style.display = 'none';
+			}
+		}
+	})
 </script>
 	
 </html>
