@@ -36,6 +36,7 @@
 	
 <!-- Use the main area to add the main content to the webpage -->
 <main>
+	<p><iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d42363.85936461816!2d-122.31086854999997!3d48.42311245!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x54854c9976b2c319%3A0x833e5c6c60d9e145!2sMount%20Vernon%2C%20WA!5e0!3m2!1sen!2sus!4v1684269522782!5m2!1sen!2sus" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe></p>
 	
 	<div id="contact">
 	
@@ -133,6 +134,19 @@
 	
 	</div>
 	
+	<!--api section-->
+	<h2>Got any other questions? Feel free to contact me!</h2>
+		<div class="two-thirds">
+			<form id="application" action="apply.php">
+				<label for="user">Name</label>
+				<input type="text" id="user" name="user"/><br>
+				<label for="answer">Answer</label>
+				<textarea id="answer" name="answer"></textarea>
+				<input type="submit"/>
+			</form>
+		
+		</div>
+	
 </main>
 
 <footer>
@@ -190,6 +204,41 @@
 			}
 		}
 	})
+	
+	/*Script for api*/
+	if (window.localstorage) {
+		var txtUser = document.getElementById('user');
+		var txtAnswer = document.getElementById('answer');
+		
+		txtUser.value = localStorage.getItem ('user');
+		txtAnswer.value = localStorage.getItem ('answer');
+		
+		txtUser.addEventListener('input' function () {
+			localStorage.setItem('user', txtUser.value);
+		}, false;
+		
+		txtanswer.addEventListener('input' function () {
+			localStorage.setItem('answer', txtanswer.value);
+		}, false;
+		
+		}
+		
+		if (window.sessionstorage) {
+		var txtUser = document.getElementById('user');
+		var txtAnswer = document.getElementById('answer');
+		
+		txtUser.value = sessionStorage.getItem ('user');
+		txtAnswer.value = sessionStorage.getItem ('answer');
+		
+		txtUser.addEventListener('input' function () {
+			sessionStorage.setItem('user', txtUser.value);
+		}, false;
+		
+		txtanswer.addEventListener('input' function () {
+			sessionStorage.setItem('answer', txtanswer.value);
+		}, false;
+		
+		}
 </script>
 	
 </html>
