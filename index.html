@@ -64,6 +64,15 @@
 			</ul>
 			
 		</section>
+		
+		<ul class="tab-list">
+			<li class="active"><a class="tab-control" href="#tab-1">Description</a></li>
+			<li><a class="tab-control" href="#tab-2">Measurements</a></li>
+			<li><a class="tab-control" href="#tab-3">Care</a></li>
+		</ul>
+		<div class="tab-panel active" id="tab-1">Monarch butterflies with lavender</div>
+		<div class="tab-panel" id="tab-2"> Length and width: 13 1/4"| Thickness: 3 3/4"| Handle drop length: 9"</div>
+		<div class="tab-panel" id="tab-3"> Machine wash| Tumble dry| Warm iron| DO NOT BLEACH</div>
 	
 		<h4>Tote bags</h4>
 		
@@ -206,6 +215,27 @@
 		true
 		);
 		
+		/*Script for popup*/
+		$('.tab-list').each(function(){
+			var $this = $(this);
+			var $tab = $this.find('li.active');
+			var $link = $tab.find('a');
+			var $panel = $($link.attr('href'));
+			
+			$this.on('click', '.tab-control', function(e) {
+				e.preventDefault();
+				var $link = $(this);
+				var id = this.hash;
+				
+				if (id && !$link.is('.active')) {
+					$panel.removeClass('active');
+					$tab.removeClass('active');
+					
+					$panel = $(id).addClass('active');
+					$tab = $link.parent().addClass('active');
+				}
+			});
+		});
 	</script>
 	
 </body>
