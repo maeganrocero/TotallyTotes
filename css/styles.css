@@ -394,3 +394,11 @@ input {
 .select-box.active .select-option:after {
 	transform: rotate(-180deg);
 }
+
+.tab-panel {
+	display: none;
+}
+
+.tab-panel.active {
+	display: block;
+}
