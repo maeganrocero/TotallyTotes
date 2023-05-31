@@ -402,3 +402,33 @@ input {
 .tab-panel.active {
 	display: block;
 }
+
+/*Styles for filter pt 2*/
+
+input {
+	display: none;
+}
+
+.tag {
+	font-size: 1.4rem;
+	margin: 1.5rem 0rem;
+	padding: 5px 1.8rem;
+	border-radius: 50px;
+	background-color: #efefef;
+	display: inline-block;
+	color: black;
+	cursor: pointer;
+	border: 1px solid #ccc;
+}
+
+.img {
+	width: 300px;
+	height: 300px;
+	transition: all .4s ease-in-out;
+}
+
+#bag-tote:checked ~ .images > img:not([class *="bag-tote"]),
+#case-cover:checked ~ .images > img:not([class *="case-cover"]) {
+	width: 0px;
+	height: 0px;
+}
